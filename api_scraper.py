@@ -3,7 +3,6 @@ import pandas as pd
 
 
 def get_data_step_by_step():
-    # 1. تحضير الطلب باستعمال المفتاح الخاص بك
     params = {
         "engine": "google_maps",
         "q": "Agences immobilières à Lyon",
@@ -16,7 +15,6 @@ def get_data_step_by_step():
         search = GoogleSearch(params)
         results = search.get_dict()
 
-        # 2. التثبت من النتائج
         if "local_results" in results:
             data = results["local_results"]
             print(f"[+] Success! Found {len(data)} agencies.")
@@ -31,7 +29,6 @@ def get_data_step_by_step():
                     "Website": item.get("website", "N/A")
                 })
 
-            # 3. حفظ البيانات في ملف Excel
             df = pd.DataFrame(final_results)
             df.to_csv("Lyon_Agencies_Portfolio.csv", index=False, encoding='utf-8-sig')
             print("\n[!!!] MABROUK! Check your folder for 'Lyon_Agencies_Official.xlsx'")
@@ -45,3 +42,4 @@ def get_data_step_by_step():
 if __name__ == "__main__":
 
     get_data_step_by_step()
+
