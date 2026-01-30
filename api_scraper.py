@@ -7,7 +7,7 @@ def get_data_step_by_step():
     params = {
         "engine": "google_maps",
         "q": "Agences immobilières à Lyon",
-        "api_key": "30e477942b589d38545d72d425114efd2424e24ced00dd4602faace61fdf4751"
+        "api_key": "YOUR_API_KEY"
     }
 
     print("[*] Connecting to Google Maps via API...")
@@ -43,4 +43,5 @@ def get_data_step_by_step():
 
 
 if __name__ == "__main__":
+
     get_data_step_by_step()
